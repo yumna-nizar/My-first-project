@@ -1,0 +1,13 @@
+.news{
+     display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.news label {
+  width: 100px;   /* same width for all labels */
+}
+
+.news input {
+  width: 250px;
+}
