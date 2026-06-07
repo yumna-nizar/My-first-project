@@ -27,28 +27,37 @@ function Loginpage() {
       <div>
         <form>
           <div className="news">
-            <label>Username:</label>
-
-            <input
-              type="text"
-              onChange={(event) => setUsername(event.target.value)}
-            ></input>
+          
+              <label>Username:</label>
+            
+            
+              <input
+                type="text"
+                onChange={(event) => setUsername(event.target.value)}
+              ></input>
+            
           </div>
           <div className="news">
-            <label>Email:</label>
-
-            <input
-              type="email"
-              onChange={(event) => setEmail(event.target.value)}
-            ></input>
+            
+              <label>Email:</label>
+            
+            
+              <input
+                type="email"
+                onChange={(event) => setEmail(event.target.value)}
+              ></input>
+            
           </div>
           <div className="news">
-            <label>Password:</label>
-
-            <input
-              type="password"
-              onChange={(event) => setPassword(event.target.value)}
-            ></input>
+            
+              <label>Password:</label>
+           
+          
+              <input
+                type="password"
+                onChange={(event) => setPassword(event.target.value)}
+              ></input>
+            
           </div>
 
           <submit onClick={handlesubmit}></submit>
