@@ -1,10 +1,13 @@
 import "../CompStyles/loginpage.css";
 import { useState } from "react";
+import axios from 'axios';
 function Loginpage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  async function handlesubmit() {
+  async function handlesubmit(event) {
+   
+    console.log("button submitted");
     try {
       const response = await axios.post("http://localhost:3000/login", {
         username,
@@ -14,7 +17,7 @@ function Loginpage() {
       console.log(response.data);
       alert(response.data);
     } catch (error) {
-      console.error(error.response.data.message);
+      console.error(error.message);
     }
   }
 
@@ -25,7 +28,7 @@ function Loginpage() {
       </div>
 
       <div>
-        <form>
+      <form onSubmit={handlesubmit}>
           <div className="news">
           
               <label>Username:</label>
@@ -60,7 +63,7 @@ function Loginpage() {
             
           </div>
 
-          <submit onClick={handlesubmit}></submit>
+          <button  type="submit">Submit</button>
         </form>
       </div>
     </>
