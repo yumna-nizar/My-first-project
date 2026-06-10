@@ -1,12 +1,12 @@
 import './App.css'
-import Loginpage from './Components/Loginpage';
+import AddStudent from './Components/AddStudent';
 
 function App() {
   
 
   return (
-    <>
-      <Loginpage/>
+    <> 
+      <AddStudent/>
     </>
   )
 }
