@@ -1,5 +1,5 @@
-import '../CompStyles/addstudent.css'
-function AddStudent()
+import '../CompStyles/student.css'
+function Student()
 {
   
     async function addStudent()
@@ -21,4 +21,4 @@ function AddStudent()
 
     </>);
 }
-export default AddStudent;
+export default Student;

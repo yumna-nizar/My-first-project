@@ -1,12 +1,12 @@
 import './App.css'
-import AddStudent from './Components/AddStudent';
+import Student from './Components/Student.jsx';
 
 function App() {
   
 
   return (
     <> 
-      <AddStudent/>
+      <Student/>
     </>
   )
 }
