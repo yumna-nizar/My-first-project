@@ -1,13 +1,32 @@
 import { useState } from "react";
 import "../CompStyles/addstudent.css";
+import axios from 'axios';
 
 function AddStudent() {
   const [studentname, setname] = useState("");
   const [email, setemail] = useState("");
   const [std, setstd] = useState("");
 
-  function submitSudent() {
+   async function submitSudent() {
     console.log(`${studentname} ${email} ${std}`);
+    try {
+        const response=await axios.post("/http://localhost:3000/addstundent",
+            {
+                studentname,
+                email,
+                std
+             });
+             console.log(response.data);
+             alert("student request send succesfully");
+
+    }
+    catch(error)
+    {
+        console.error(error);
+         alert("Error while adding student");
+    }
+    
+    
   }
 
   return (
