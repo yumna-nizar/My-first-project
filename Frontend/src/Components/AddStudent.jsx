@@ -5,16 +5,16 @@ import axios from 'axios';
 function AddStudent() {
   const [studentname, setname] = useState("");
   const [email, setemail] = useState("");
-  const [std, setstd] = useState("");
+  const [age, setage] = useState("");
 
-   async function submitSudent() {
-    console.log(`${studentname} ${email} ${std}`);
+   async function submitStudent() {
+    console.log(`${studentname} ${email} ${age}`);
     try {
-        const response=await axios.post("/http://localhost:3000/addstundent",
+        const response=await axios.post("http://localhost:3000/addstudent",
             {
                 studentname,
                 email,
-                std
+                age
              });
              console.log(response.data);
              alert("student request send succesfully");
@@ -41,11 +41,11 @@ function AddStudent() {
         <input type="text" onChange={(e) => setemail(e.target.value)}></input>
       </div>
       <div className="form-group">
-        <label>Class:</label>
-        <input type="text" onChange={(e) => setstd(e.target.value)}></input>
+        <label>age:</label>
+        <input type="text" onChange={(e) => setage(e.target.value)}></input>
       </div>
       <div className="button-container">
-        <button className="submit-btn" onClick={submitSudent}>
+        <button className="submit-btn" onClick={submitStudent}>
           Submit
         </button>
       </div>
