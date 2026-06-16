@@ -65,6 +65,18 @@ app.post("/addstudent", async (req, res) => {
   }
 });
 
+app.get("/viewstudent",async (req,res)=>
+{
+try{
+    const studs=await Student.find();
+    res.status(200).json(studs);
+}
+catch(error)
+{
+    res.status(500).json({message:"unable to fetch student detials"});
+}
+});
+
 app.listen(port, () => {
   console.log(`server is listening in port ${port}`);
 });
