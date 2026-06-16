@@ -1,70 +1,67 @@
 .viewstudent-container {
-  padding: 30px;
-  max-width: 1000px;
+  padding: 40px 32px;
+  max-width: 1040px;
   margin: 0 auto;
+  background-color: #e3e8f0;
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(24, 40, 66, 0.14);
 }
 
 .viewstudent-container h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-  font-size: 28px;
+  color: #1f2a39;
+  margin-bottom: 28px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
 }
 
 .student-table {
   width: 100%;
-  border-collapse: collapse;
-  background-color: #110f0f;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border-radius: 6px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #f8fafc;
+  border: 1px solid #bfc8d6;
+  border-radius: 14px;
   overflow: hidden;
-  border: 2px solid #111;
 }
 
 .student-table thead {
-  background-color: #f1f4f6;
-  color: #040505;
-}
-.student-table th {
-  padding: 15px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 14px;
+  background-color: #2d3f53;
 }
 
 .student-table thead th {
-  padding: 12px 15px;
+  padding: 16px 20px;
   text-align: left;
   font-weight: 700;
-  font-size: 13px;
-  border-right: 2px solid #111;
-  border-bottom: 2px solid #111;
+  font-size: 14px;
+  color: #f8fbff;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .student-table thead th:last-child {
   border-right: none;
 }
 
-.student-table th {
-  padding: 15px;
-  text-align: left;
-  font-weight: 600;
+.student-table tbody td {
+  padding: 16px 20px;
   font-size: 14px;
+  color: #2f3e52;
+  border-right: 1px solid #d7dde6;
+  border-bottom: 1px solid #d7dde6;
 }
 
-.student-table td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #222;
-  border-right: 1.5px solid #222;
-  font-size: 14px;
-  color: #f3eeee;
-}
-
-.student-table td:last-child {
+.student-table tbody td:last-child {
   border-right: none;
 }
 
+.student-table tbody tr:nth-child(even) {
+  background-color: #eef2f7;
+}
 
+.student-table tbody tr:hover {
+  background-color: #dfe6ef;
+}
 
 .student-table tbody tr:last-child td {
   border-bottom: none;
@@ -73,6 +70,17 @@
 .empty-message {
   text-align: center;
   padding: 40px;
-  color: #999;
-  font-size: 16px;
+  color: #4a5b6d;
+  font-size: 15px;
+}
+
+@media (max-width: 700px) {
+  .viewstudent-container {
+    padding: 24px 16px;
+  }
+  .student-table thead th,
+  .student-table tbody td {
+    padding: 12px 12px;
+    font-size: 13px;
+  }
 }
