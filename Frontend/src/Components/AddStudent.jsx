@@ -17,13 +17,13 @@ function AddStudent() {
                 age
              });
              console.log(response.data);
-             alert("student request send succesfully");
+             alert(`${response.data.student} ${response.data.message} `);
 
     }
     catch(error)
     {
-        console.error(error);
-         alert("Error while adding student");
+        console.error(error.response.data.message);
+         alert(error.response.data.message);
     }
     
     
