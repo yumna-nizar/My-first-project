@@ -1,22 +1,25 @@
 import "../CompStyles/loginpage.css";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function Loginpage() {
-  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   async function handlesubmit(event) {
-   
+    event.preventDefault();
     console.log("button submitted");
     try {
       const response = await axios.post("http://localhost:3000/login", {
-        username,
         email,
         password,
       });
-      console.log(response.data);
-      alert(response.data);
+      alert(response.data.message);
+      if (response.data.success) {
+        navigate("/admin-dashboard");
+      }
     } catch (error) {
+      alert(error.message);
       console.error(error.message);
     }
   }
@@ -28,43 +31,24 @@ function Loginpage() {
       </div>
 
       <div>
-      <form onSubmit={handlesubmit}>
-          <div className="news">
-          
-              <label>Username:</label>
-            
-            
-              <input
-                type="text"
-                onChange={(event) => setUsername(event.target.value)}
-              ></input>
-            
-          </div>
-          <div className="news">
-            
-              <label>Email:</label>
-            
-            
-              <input
-                type="email"
-                onChange={(event) => setEmail(event.target.value)}
-              ></input>
-            
-          </div>
-          <div className="news">
-            
-              <label>Password:</label>
-           
-          
-              <input
-                type="password"
-                onChange={(event) => setPassword(event.target.value)}
-              ></input>
-            
-          </div>
+        <div className="news">
+          <label>Email:</label>
 
-          <button  type="submit">Submit</button>
-        </form>
+          <input
+            type="email"
+            onChange={(event) => setEmail(event.target.value)}
+          ></input>
+        </div>
+        <div className="news">
+          <label>Password:</label>
+
+          <input
+            type="password"
+            onChange={(event) => setPassword(event.target.value)}
+          ></input>
+        </div>
+
+        <button onClick={handlesubmit}>Submit</button>
       </div>
     </>
   );

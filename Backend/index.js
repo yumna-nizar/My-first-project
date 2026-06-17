@@ -31,9 +31,17 @@ const Student = mongoose.model("Student", studentSchema);
 app.get("/", (req, res) => {});
 
 app.post("/login", (req, res) => {
-  console.log(req.body);
-  console.log("hello we have reached in the login api endpoint");
-  res.send("Login successful");
+  try {
+    console.log("request reached backend");
+    const { email, password } = req.body;
+    if (email === "admin@gmail.com" && password === "1234") {
+      return res.status(200).json({ success: true, message: "Logged in as admin" });
+    }
+    return res.json({ success: false, message: "Invalid admin credentials" });
+  } catch (error) {
+    console.error("Login error:", error);
+    return res.status(500).json({ success: false, message: "Server error during login" });
+  }
 });
 
 app.post("/addstudent", async (req, res) => {

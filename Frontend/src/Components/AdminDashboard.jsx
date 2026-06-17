@@ -1,11 +1,11 @@
 import "../CompStyles/student.css";
 import { Link } from "react-router-dom";
 
-function Home() {
+function AdminDashboard() {
   return (
-    <><h1>Home Page</h1>
+    <>
+      <h1>Admin Dashboard</h1>
       <div className="container">
-        
         <div className="button-group">
           <Link to="/add-student">
             <button>Add Student</button>
@@ -19,4 +19,4 @@ function Home() {
     </>
   );
 }
-export default Home;
+export default AdminDashboard;
