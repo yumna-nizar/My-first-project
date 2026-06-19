@@ -4,19 +4,22 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 function Loginpage() {
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
   async function handlesubmit(event) {
     event.preventDefault();
     console.log("button submitted");
     try {
       const response = await axios.post("http://localhost:3000/login", {
-        email,
+        username,
         password,
       });
-      alert(response.data.message);
-      if (response.data.success) {
+      alert(`logging into ${response.data.role}`);
+      if (response.data.role==="admin") {
         navigate("/admin-dashboard");
+      }
+      else{
+        navigate("/student-dashboard");
       }
     } catch (error) {
       alert(error.message);
@@ -32,11 +35,11 @@ function Loginpage() {
 
       <div>
         <div className="news">
-          <label>Email:</label>
+          <label>Username:</label>
 
           <input
             type="email"
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setUsername(event.target.value)}
           ></input>
         </div>
         <div className="news">
