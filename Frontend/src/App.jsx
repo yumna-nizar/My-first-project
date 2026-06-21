@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import AddStudent from "./Components/AddStudent.jsx";
 import ViewStudent from "./Components/ViewStudent.jsx";
 import Loginpage from "./Components/Loginpage.jsx";
+import StudentDashboard from "./Components/StudentDashboard.jsx";
+import StudViewProfile from "./Components/StudViewProfile.jsx";
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/add-student" element={<AddStudent />} />
         <Route path="/view-student" element={<ViewStudent />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/student-profile" element={<StudViewProfile />} />
+
       </Routes>
     </>
   );
