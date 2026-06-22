@@ -86,6 +86,21 @@ app.get("/viewstudent", async (req, res) => {
   }
 });
 
+app.get("/viewprofile",async (req,res)=>
+{
+  const {email}=req.query;
+try{
+ const studentprofile=await Student.findOne({email});
+ res.status(200).json(studentprofile);
+}
+catch(error)
+{
+res.status(500).json({
+  message:"unable to getch the profile" 
+})
+}
+});
+
 app.listen(port, () => {
   console.log(`server is listening in port ${port}`);
 });

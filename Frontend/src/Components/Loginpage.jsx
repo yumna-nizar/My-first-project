@@ -14,6 +14,7 @@ function Loginpage() {
         username,
         password,
       });
+      localStorage.setItem("email",password);
       alert(`logging into ${response.data.role}`);
       if (response.data.role==="admin") {
         navigate("/admin-dashboard");
