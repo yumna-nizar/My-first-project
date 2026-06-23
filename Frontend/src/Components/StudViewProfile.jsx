@@ -22,7 +22,7 @@ function StudViewProfile() {
   }
   useEffect(() => {
     viewprofile();
-  }, [email]);
+  }, []);
 
   if (!profile.name && !profile.email && !profile.age) {
     return (

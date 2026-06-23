@@ -15,8 +15,21 @@ function ViewStudent() {
         }
         catch(error)
         {
-            console.log(error);
+            console.log(error.message);
         }
+    }
+     async function handleDelete(id)
+    {
+       try {
+        const response= await axios.delete(`http://localhost:3000/deletestudent/${id}`
+        );
+        alert(response.data.message);
+       }
+       catch(error)
+       {
+        alert(error.response.data.message);
+       }
+       fetchstudent();
     }
   return (
     <div className="viewstudent-container">
@@ -27,6 +40,7 @@ function ViewStudent() {
             <th>Student name</th>
             <th>Age</th>
             <th>Email</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +48,7 @@ function ViewStudent() {
             <td>{student.name}</td>
             <td>{student.age}</td>
             <td>{student.email}</td>
+            <td><button>Edit</button><button onClick={()=>handleDelete(student._id)}>Delete</button></td>
             </tr>)}
            
         </tbody>
