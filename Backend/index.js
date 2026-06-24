@@ -96,9 +96,31 @@ try{
 catch(error)
 {
 res.status(500).json({
-  message:"unable to getch the profile" 
+  message:"unable to get the profile" 
 })
 }
+});
+
+app.delete("/deletestudent/:id",async (req,res)=>
+{
+const id=req.params.id;
+try{
+  await Student.findByIdAndDelete(id);
+  res.status(200).json(
+    {
+      message:"student deleted successfully"
+    }
+  );
+}
+catch(error)
+{
+  res.status(500).json(
+    {
+      message:"unable to delete the student"
+    }
+  );
+}
+
 });
 
 app.listen(port, () => {
