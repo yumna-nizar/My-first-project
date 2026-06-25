@@ -123,6 +123,49 @@ catch(error)
 
 });
 
+
+app.get("/fetchstudent/:id",async (req,res)=>
+{
+ 
+  const id=req.params.id;
+  try{
+ const studentprofile=await Student.findById(id);
+ res.status(200).json(studentprofile);
+}
+catch(error)
+{
+res.status(500).json({
+  message:"unable to get the profile" 
+});
+}
+  
+});
+
+app.put("/editstudent/:id",async (req,res)=>
+{
+   const {studentname,email,age}=req.body;
+   const id=req.params.id;
+   try{
+    await Student.findByIdAndUpdate(id,
+      {
+        name:studentname,
+        age,
+        email
+      }
+    )
+   }
+   catch(error)
+   {
+    console.error(error);
+    req.status(500).json(
+      {
+        message:"unable to update student"
+      }
+    )
+   }
+
+});
+
 app.listen(port, () => {
   console.log(`server is listening in port ${port}`);
 });

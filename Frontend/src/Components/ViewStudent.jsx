@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "../CompStyles/viewstudent.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ViewStudent() {
+  const navigate=useNavigate();
     const [student,setStudent]=useState([]);
     useEffect(()=>{
         fetchstudent();
@@ -48,7 +50,7 @@ function ViewStudent() {
             <td>{student.name}</td>
             <td>{student.age}</td>
             <td>{student.email}</td>
-            <td><button>Edit</button><button onClick={()=>handleDelete(student._id)}>Delete</button></td>
+            <td><button onClick={()=>navigate(`/edit-student/${student._id}`)}>Edit</button><button onClick={()=>handleDelete(student._id)}>Delete</button></td>
             </tr>)}
            
         </tbody>

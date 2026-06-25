@@ -6,6 +6,7 @@ import ViewStudent from "./Components/ViewStudent.jsx";
 import Loginpage from "./Components/Loginpage.jsx";
 import StudentDashboard from "./Components/StudentDashboard.jsx";
 import StudViewProfile from "./Components/StudViewProfile.jsx";
+import EditStudent from "./Components/EditStudent.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/view-student" element={<ViewStudent />} />
         <Route path="/student-dashboard" element={<StudentDashboard />} />
         <Route path="/student-profile" element={<StudViewProfile />} />
+        <Route path="/edit-student/:id" element={<EditStudent />} />
 
       </Routes>
     </>
