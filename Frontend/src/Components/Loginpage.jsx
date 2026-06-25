@@ -14,12 +14,11 @@ function Loginpage() {
         username,
         password,
       });
-      localStorage.setItem("email",password);
+      localStorage.setItem("email", password);
       alert(`logging into ${response.data.role}`);
-      if (response.data.role==="admin") {
+      if (response.data.role === "admin") {
         navigate("/admin-dashboard");
-      }
-      else{
+      } else {
         navigate("/student-dashboard");
       }
     } catch (error) {
@@ -29,32 +28,32 @@ function Loginpage() {
   }
 
   return (
-    <>
-      <div>
-        <h1>Login Page</h1>
+    <div className="login-container">
+      <div className="login-card">
+        <h1>Login</h1>
+        <form onSubmit={handlesubmit}>
+          <div className="input-group">
+            <label>Username:</label>
+            <input
+              type="text"
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+
+          <button type="submit" className="login-btn">
+            Submit
+          </button>
+        </form>
       </div>
-
-      <div>
-        <div className="news">
-          <label>Username:</label>
-
-          <input
-            type="email"
-            onChange={(event) => setUsername(event.target.value)}
-          ></input>
-        </div>
-        <div className="news">
-          <label>Password:</label>
-
-          <input
-            type="password"
-            onChange={(event) => setPassword(event.target.value)}
-          ></input>
-        </div>
-
-        <button onClick={handlesubmit}>Submit</button>
-      </div>
-    </>
+    </div>
   );
 }
 export default Loginpage;

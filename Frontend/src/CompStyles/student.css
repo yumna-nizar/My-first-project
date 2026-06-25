@@ -1,33 +1,77 @@
-.container {
-  height: 100vh;
+.dashboard-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: #e3e8f0;
+  padding: 20px;
+}
+
+.dashboard-card {
+  background-color: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(24, 40, 66, 0.14);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #bfc8d6;
+}
+
+.dashboard-card h1 {
+  text-align: center;
+  color: #1f2a39;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.dashboard-card p {
+  text-align: center;
+  color: #667080;
+  margin-bottom: 30px;
+  font-size: 15px;
 }
 
 .button-group {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
-.button-group button {
-  padding: 12px 24px;
-  font-size: 16px;
+.button-group a {
+  text-decoration: none;
+}
+
+.dashboard-btn {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 15px;
   font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #2563eb;
-  color: white;
-  transition: 0.3s ease;
+  background: linear-gradient(135deg, #2d3f53 0%, #3d4f63 100%);
+  color: #f8fbff;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(45, 63, 83, 0.25);
 }
 
-.button-group button:hover {
-  background-color: #1d4ed8;
+.dashboard-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(45, 63, 83, 0.35);
 }
 
-.button-group button:active {
+.dashboard-btn:active {
   transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(45, 63, 83, 0.2);
+}
+
+@media (max-width: 480px) {
+  .dashboard-card {
+    padding: 36px 24px;
+  }
+
+  .dashboard-card h1 {
+    font-size: 28px;
+  }
 }

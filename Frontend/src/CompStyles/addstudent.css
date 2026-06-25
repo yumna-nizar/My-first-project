@@ -1,61 +1,101 @@
-.addstudent-container {
+.form-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 30px;
-  max-width: 500px;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e3e8f0;
+  padding: 20px;
 }
 
-.addstudent-container h1 {
+.form-card {
+  background-color: #f8fafc;
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(24, 40, 66, 0.14);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #bfc8d6;
+}
+
+.form-card h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 10px;
+  color: #1f2a39;
+  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.form-card p {
+  text-align: center;
+  color: #667080;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .form-group label {
   font-weight: 600;
-  color: #555;
-  font-size: 14px;
+  color: #1f2a39;
+  font-size: 15px;
 }
 
 .form-group input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 12px 16px;
+  border: 1px solid #bfc8d6;
+  border-radius: 8px;
   font-size: 14px;
-  transition: border-color 0.3s;
+  background-color: #eef2f7;
+  transition: all 0.3s ease;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
+  border-color: #2d3f53;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(45, 63, 83, 0.1);
 }
 
 .submit-btn {
-  padding: 10px 30px;
-  background-color: #007bff;
-  color: white;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #2d3f53 0%, #3d4f63 100%);
+  color: #f8fbff;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+  box-shadow: 0 8px 20px rgba(45, 63, 83, 0.25);
 }
 
 .submit-btn:hover {
-  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(45, 63, 83, 0.35);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(45, 63, 83, 0.2);
+}
+
+@media (max-width: 480px) {
+  .form-card {
+    padding: 36px 24px;
+  }
+
+  .form-card h1 {
+    font-size: 28px;
+  }
 }
